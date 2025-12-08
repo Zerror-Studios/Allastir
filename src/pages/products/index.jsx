@@ -99,7 +99,9 @@ export async function getStaticProps() {
     author: "Allastir",
     robots: "index,follow",
   };
-  const products = productData;
+  const products = [...productData].sort((a, b) =>
+    a.title.localeCompare(b.title)
+  );
 
   return { props: { meta, products } };
 }

@@ -41,12 +41,11 @@ Experts in niche and high-value APIs.
                 onClick={() =>
                   setActiveIndex((prev) => (prev === i ? null : i))
                 }
-                className={`w-full text-left px-4 py-3 font-semibold text-[4.2vw] capitalize ${
+                className={`w-full text-left px-4 py-3 font-semibold text-[4.2vw]  ${
                   activeIndex === i ? "bg-[#DD2B1C] text-white" : "bg-gray-100"
                 }`}
               >
-                {productCategory.title.charAt(0) +
-                  productCategory.title.slice(1).toLowerCase()}
+                {productCategory.title}
               </button>
 
               {/* Accordion content */}
@@ -94,7 +93,7 @@ Experts in niche and high-value APIs.
         <div className="flex items-start justify-between pb-[8vw]">
           <div
             id="scroll-bar"
-            className="w-[17%] h-[calc(100vh-10vw)] pr-2 overflow-auto"
+            className="w-[20%] h-[calc(100vh-10vw)] pr-2 overflow-auto"
             data-lenis-prevent
           >
             <ul>
@@ -102,21 +101,20 @@ Experts in niche and high-value APIs.
                 <li
                   key={i}
                   onClick={() => setActiveIndex(i)}
-                  className={`mb-[16px] text-center text-[14px] capitalize py-[13px] font-semibold rounded-full border border-gray-300 cursor-pointer transition 
+                  className={`mb-[16px] text-center text-[14px]  py-[13px] font-semibold rounded-full border border-gray-300 cursor-pointer transition 
                                         ${
                                           activeIndex === i
                                             ? " text-white bg-[#DD2B1C]"
                                             : "bg-gray-100/50 text-black"
                                         } hover:bg-[#DD2B1C] hover:text-white`}
                 >
-                  {product.title.charAt(0) +
-                    product.title.slice(1).toLowerCase()}
+                  {product.title}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="w-[82%] px-[1%] grid grid-cols-3 gap-8">
+          <div className="w-[80%] px-[1%] grid grid-cols-3 gap-8">
             {products[activeIndex]?.product.map((product, i) => (
               <div
                 key={i}

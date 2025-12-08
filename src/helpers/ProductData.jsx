@@ -1,7 +1,7 @@
 export const productData = [
    
     {
-      title: "ANTI-FUNGAL",
+      title: "Anti-Fungal",
       product: [
         {
           name: "Amoralfine HCL",
@@ -21,7 +21,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-DIABETIC",
+      title: "Anti-Diabetic",
       product: [
         {
           name: "Voglibose JP ",
@@ -36,7 +36,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-VIRAL",
+      title: "Anti-Viral",
       product: [
         {
           name: "Dolutegravir Sodium",
@@ -51,7 +51,7 @@ export const productData = [
       ]
     },
     {
-      title: "DIURETICS",
+      title: "Diuretics",
       product: [
         {
           name: "Torsemide USP",
@@ -61,7 +61,7 @@ export const productData = [
       ]
     },
     {
-      title: "HYPER URICEMIA",
+      title: "Hyperuricemia",
       product: [
         {
           name: "Topiroxostat",
@@ -71,7 +71,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-SPASMODIC",
+      title: "Anti-Spasmodic",
       product: [
         {
           name: "Valethemate Bromide",
@@ -81,7 +81,7 @@ export const productData = [
       ]
     },
     {
-      title: "POLYCYSTIC OVARIAN (PCOS)",
+      title: "Polycystic Ovarian (PCOS)",
       product: [
         {
           name: "D-Chiro Inositol",
@@ -91,7 +91,7 @@ export const productData = [
       ]
     },
     {
-      title: "RHEUMATOID ARTHRITIS",
+      title: "Rheumatoid Arthritis",
       product: [
         {
           name: "Iguratimod",
@@ -101,7 +101,7 @@ export const productData = [
       ]
     },
     {
-      title: "NON-VALVULAR ARTRIAL FIBRILLATION",
+      title: "Non-Valvular Atrial Fibrillation",
       product: [
         {
           name: "Rivaroxaban",
@@ -111,7 +111,7 @@ export const productData = [
       ]
     },
     {
-      title: "IDIOPATHIC PULMANARY FIBROSIS(IPF)",
+      title: "Idiopathic Pulmonary Fibrosis (IPF)",
       product: [
         {
           name: "Perfenidone BP",
@@ -121,7 +121,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-BACTERIAL",
+      title: "Anti-Bacterial",
       product: [
         {
           name: "Linezolid",
@@ -131,7 +131,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-PLATELET",
+      title: "Anti-Platelet",
       product: [
         {
           name: "Cilostazol",
@@ -141,7 +141,7 @@ export const productData = [
       ]
     },
     {
-      title: "ALPHA-BLOCKER",
+      title: "Alpha-Blocker",
       product: [
         {
           name: "Silodosin",
@@ -151,7 +151,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-CONVULSANTS",
+      title: "Anti-Convulsants",
       product: [
         {
           name: "Cenobamate",
@@ -161,7 +161,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-INFLAMMATORY",
+      title: "Anti-Inflammatory",
       product: [
         {
           name: "Polydatin",
@@ -171,7 +171,7 @@ export const productData = [
       ]
     },
     {
-      title: "NUTRACEUTICAL & FOOD SUPPLEMENT",
+      title: "Nutraceutical & Food Supplement",
       product: [
         {
           name: "L-Methylfolate/Calcium-L-5-methyl tetrahydrofolate",
@@ -236,7 +236,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-ULCER",
+      title: "Anti-Ulcer",
       product: [
         {
           name: "Troxipide",
@@ -246,7 +246,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-FUNGAL ",
+      title: "Anti-Fungal",
       product: [
         {
           name: "Isavuconazonium Sulfate",
@@ -271,7 +271,7 @@ export const productData = [
       ]
     },
     {
-      title: "ANTI-BACTERIAL",
+      title: "Anti-Bacterial",
       product: [
         {
           name: "Fosfomycin Trometamol ",
@@ -281,7 +281,7 @@ export const productData = [
       ]
     },
     {
-      title: "TREATMENT OF EPILEPSY",
+      title: "Epilepsy",
       product: [
         {
           name: "Brivaracetam",
