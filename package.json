@@ -22,6 +22,7 @@
     "nodemailer": "^7.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-google-drive-picker": "^1.2.2",
     "react-simple-maps": "^3.0.0",
     "react-toastify": "^11.0.5",
     "remixicon": "^4.5.0",
