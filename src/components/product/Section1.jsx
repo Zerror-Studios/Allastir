@@ -11,7 +11,7 @@ const Section1 = ({ sec1Ref }) => {
       <Image width={1000} height={1000} priority className='w-full h-full object-cover' src="/product-banner.jpg" alt="banner-image" />
       <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center bg-black/40'>
         <div className='sm:h-[10vw] md:h-[7vw] lg:h-[6vw] h-[4vw] overflow-hidden sm:mt-[70px] md:mt-[70px] lg:mt-[70px]'>
-          <h2 className='sm:text-[10vw] md:text-[7vw] lg:text-[6vw] leading-none text-[4vw] text-white'>Our Product</h2>
+          <h2 className='sm:text-[10vw] md:text-[7vw] lg:text-[6vw] leading-none text-[4vw] text-white'>Our Products</h2>
         </div>
       </div>
     </div>

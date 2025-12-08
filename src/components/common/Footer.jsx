@@ -72,10 +72,10 @@ const Footer = () => {
                 <strong>E-Mail : </strong>{" "}
                 <a
                   target="_blank"
-                  href="https://maps.app.goo.gl/j87WGfps9Go8yHrz7"
+                  href="mailto:sales@allastir.com"
                   className="hover:text-gray-300 sm:text-[4vw]"
                 >
-                  Info@allastir.com
+                   sales@allastir.com
                 </a>
               </span>
             </div>
@@ -118,10 +118,10 @@ const Footer = () => {
                 <strong>E-Mail : </strong>{" "}
                 <a
                   target="_blank"
-                  href="https://maps.app.goo.gl/j87WGfps9Go8yHrz7"
+                  href="mailto:sales@allastir.com"
                   className="hover:text-gray-300 sm:text-[4vw]"
                 >
-                  Info@allastir.com
+                   sales@allastir.com
                 </a>
               </span>
             </div>

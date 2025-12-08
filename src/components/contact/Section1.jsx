@@ -220,7 +220,7 @@ const Section1 = () => {
             <h4 className="mt-[1vw] text-[1vw] font-semibold">
               E-Mail Address
             </h4>
-            <p className="text-[1.05vw] text-black/70">Info@allastir.com</p>
+            <p className="text-[1.05vw] text-black/70"><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
           </div>
         </div>
 
@@ -244,7 +244,7 @@ const Section1 = () => {
             <h4 className="mt-[1vw] text-[1vw] font-semibold">
               E-Mail Address
             </h4>
-            <p className="text-[1.05vw] text-black/70">Info@allastir.com</p>
+            <p className="text-[1.05vw] text-black/70"><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
           </div>
         </div>
       </div>

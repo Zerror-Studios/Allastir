@@ -28,7 +28,8 @@ const ProductListing = ({ products }) => {
   return (
     <div className="relative w-full min-h-fit sm:p-[20px] sm:py-[10vw] p-[11%] py-[6vw] pb-[0vw]">
       <h2 className="sm:text-[7vw] md:text-[7vw] text-[3vw] leading-tight sm:mb-[6vw] mb-[6vw]">
-        Niche Product Offerings of 38 APIs.
+        Advanced facilities built for quality. <br />
+Experts in niche and high-value APIs.
       </h2>
 
       {/* Mobile Accordion */}
