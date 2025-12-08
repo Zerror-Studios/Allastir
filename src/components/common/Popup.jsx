@@ -5,10 +5,13 @@ import React, { useEffect, useState } from "react";
 import NotificationCard from "./NotificationCard";
 
 const Popup = () => {
-  const [showNotification1, setShowNotification1] = useState(true);
-  const [showNotification2, setShowNotification2] = useState(true);
-  const [showFullPopup, setShowFullPopup] = useState(false);
   const router = useRouter();
+  const isHome = router.pathname === "/";
+
+  // Initialize state based on current page
+  const [showNotification1, setShowNotification1] = useState(isHome);
+  const [showNotification2, setShowNotification2] = useState(isHome);
+  const [showFullPopup, setShowFullPopup] = useState(false);
 
   const handleViewDetails = () => {
     setShowFullPopup(true);
@@ -18,24 +21,27 @@ const Popup = () => {
 
   const showBell = !showNotification1 && !showNotification2;
 
+  // Update state when route changes
   useEffect(() => {
-    if (showNotification1 || showNotification2) {
+    if (isHome) {
+      setShowNotification1(true);
+      setShowNotification2(true);
+    } else {
+      setShowNotification1(false);
+      setShowNotification2(false);
+    }
+  }, [isHome]);
+
+  // Animate notifications only on home page
+  useEffect(() => {
+    if (isHome && (showNotification1 || showNotification2)) {
       gsap.fromTo(
         ".notification",
-        {
-          x: 50,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-        }
+        { x: 50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, stagger: 0.15, ease: "power3.out" }
       );
     }
-  }, [showNotification1, showNotification2, router.asPath]);
+  }, [showNotification1, showNotification2, isHome]);
 
   return (
     <div className="fixed bottom-0 right-0 z-[99] p-6 flex items-end justify-end">
@@ -62,7 +68,7 @@ const Popup = () => {
             location="Messe frankfurt, Frankfurt Germany"
             stall="Stall No. 12.1 F 40"
             onClose={() => setShowNotification1(false)}
-            onView={() => handleViewDetails()}
+            onView={handleViewDetails}
           />
         )}
 
@@ -74,7 +80,7 @@ const Popup = () => {
             location="India Expo Center (IEML), Greater Noida, Delhi NCR"
             stall="Hall B, Stall No. RH.N 19"
             onClose={() => setShowNotification2(false)}
-            onView={() => handleViewDetails()}
+            onView={handleViewDetails}
           />
         )}
       </div>
@@ -83,7 +89,7 @@ const Popup = () => {
       {showFullPopup && (
         <div
           data-lenis-prevent
-          className="fixed top-0 left-0 w-full sm:h-full sm:py-[5vw] sm:pt-[5vw] h-screen  bg-black z-50 flex flex-row sm:flex-col sm:justify-center gap-[3vw] justify-center items-center overflow-y-auto"
+          className="fixed top-0 left-0 w-full sm:h-full sm:py-[5vw] sm:pt-[5vw] h-screen bg-black z-50 flex flex-row sm:flex-col sm:justify-center gap-[3vw] justify-center items-center overflow-y-auto"
         >
           <Image
             src="/events/event1.jpg"

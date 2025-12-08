@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-import { toast } from "react-toastify";
 import Image from "next/image";
 
 const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
@@ -15,6 +14,8 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
 
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Update product data in form whenever selected product changes
   useEffect(() => {
@@ -55,6 +56,8 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
     if (!validateForm()) return;
 
     setIsLoading(true);
+    setSuccessMessage("");
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/enquiry", {
@@ -74,13 +77,19 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
         cas: productData?.description || "",
       });
       setErrors({});
-      setIsLoading(false);
-      toast.success("Form submitted successfully!");
-      setIsCartOpen(false);
+      setSuccessMessage("Form submitted successfully!");
+
+      // Close cart after 0.5s
+      setTimeout(() => {
+        setIsCartOpen(false);
+        setSuccessMessage("");
+      }, 2500);
+
     } catch (error) {
-      setIsLoading(false);
-      toast.error("Submission failed. Please try again.");
+      setErrorMessage("Submission failed. Please try again.");
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -96,11 +105,8 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
       gsap.set(cartContainer, { right: "-50%" });
       gsap.set(cartOverlay, { visibility: "visible" });
 
-      tl.to(cartOverlay, {
-        opacity: 1,
-        backgroundColor: "#00000070",
-        duration: 0.5,
-      }).to(cartContainer, { right: "0%", duration: 0.8, ease: "power3.out" }, "-=0.4");
+      tl.to(cartOverlay, { opacity: 1, backgroundColor: "#00000070", duration: 0.5 })
+        .to(cartContainer, { right: "0%", duration: 0.8, ease: "power3.out" }, "-=0.4");
     } else {
       tl.to(cartOverlay, { backgroundColor: "transparent", duration: 0.3 })
         .to(cartContainer, { right: "-50%", duration: 0.6, ease: "power3.in" }, "-=0.3")
@@ -115,9 +121,11 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
         product: productData?.name || "",
         cas: productData?.description || "",
       });
+      setSuccessMessage("");
+      setErrorMessage("");
     }
 
-    return () => tl.kill(); // Clean up timeline on unmount
+    return () => tl.kill();
   }, [isCartOpen, productData]);
 
   return (
@@ -140,7 +148,22 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
               Have questions or need product details? Fill out the form and our team will get back to you shortly.
             </p>
           </div>
+
           <form onSubmit={handleSubmit} className="w-full mt-[1.5vw] flex flex-col gap-[1vw] text-[1.1vw]">
+            {/* SUCCESS MESSAGE */}
+            {successMessage && (
+              <p className="text-green-600 text-xs w-fit bg-green-600/10 p-2 border rounded border-green-600 font-semibold mb-2">
+                <i className="ri-error-warning-line"></i> {successMessage}
+              </p>
+            )}
+
+            {/* ERROR MESSAGE */}
+            {errorMessage && (
+              <p className="text-red-600 text-xs w-fit bg-red-600/10 p-2 border rounded border-red-600 font-semibold mb-2">
+                <i className="ri-error-warning-line"></i> {errorMessage}
+              </p>
+            )}
+
             {productData && (
               <div className="flex items-center p-2 bg-gray-100 rounded">
                 <div className="w-[60px] h-[60px] relative overflow-hidden bg-white">
@@ -158,6 +181,7 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
                 </div>
               </div>
             )}
+
             {["name", "phone", "email"].map((field) => (
               <div key={field} className="w-full flex flex-col">
                 {errors[field] && <span className="text-red-500 text-sm mb-1">{errors[field]}</span>}
@@ -171,6 +195,7 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
                 />
               </div>
             ))}
+
             <div className="w-full flex flex-col">
               {errors.message && <span className="text-red-500 text-sm mb-1">{errors.message}</span>}
               <textarea
@@ -181,11 +206,13 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
                 className="w-full resize-none h-[7vw] p-2 border border-black/20 rounded-md bg-transparent"
               />
             </div>
+
             <button className="bg-black text-white w-full py-2 rounded-full mt-2">
               {isLoading ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
+
         <button
           className="absolute top-[20px] right-[40px] text-xl text-black hover:text-gray-800"
           onClick={() => setIsCartOpen(false)}
