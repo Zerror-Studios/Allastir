@@ -3,7 +3,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect } from "react";
-gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Journey = () => {
   const timelineData = [
@@ -64,13 +64,6 @@ const Journey = () => {
       image: "/journey/image8.jpeg",
     },
     {
-      year: 2024,
-      title: "Scaling Operations",
-      description:
-        "We commenced operations at Unit-II, significantly enhancing our production capacity and operational efficiency.",
-      image: "/journey/image9.jpeg",
-    },
-    {
       year: 2025,
       title: "Entering Oncology Market",
       description:
@@ -98,16 +91,15 @@ const Journey = () => {
         invalidateOnRefresh: true, // Recalculates values on resize
       },
     });
-    tl
-    .add("year10")
-    .to(
-      ".timeline-strip",
-      {
-        height: "10%",
-        duration: 1,
-      },
-      "s"
-    )
+    tl.add("year10")
+      .to(
+        ".timeline-strip",
+        {
+          height: "11%",
+          duration: 1,
+        },
+        "s"
+      )
       .to(
         ".present-year , .timeline-title",
         {
@@ -170,7 +162,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "20%",
+          height: "22%",
           duration: 1,
         },
         "s2"
@@ -237,7 +229,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "30%",
+          height: "33%",
           duration: 1,
         },
         "s3"
@@ -303,7 +295,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "40%",
+          height: "44%",
           duration: 1,
         },
         "s4"
@@ -370,7 +362,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "50%",
+          height: "55%",
           duration: 1,
         },
         "s5"
@@ -436,7 +428,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "60%",
+          height: "66%",
           duration: 1,
         },
         "s6"
@@ -503,7 +495,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "70%",
+          height: "77%",
           duration: 1,
         },
         "s7"
@@ -570,7 +562,7 @@ const Journey = () => {
       .to(
         ".timeline-strip",
         {
-          height: "80%",
+          height: "88%",
           duration: 1,
         },
         "s8"
@@ -632,73 +624,6 @@ const Journey = () => {
         },
         "h"
       )
-      .add("year2024")
-
-      .to(
-        ".timeline-strip",
-        {
-          height: "90%",
-          duration: 1,
-        },
-        "s9"
-      )
-      .to(
-        ".present-year , .timeline-title",
-        {
-          transform: "translateY(-900%)",
-          duration: 1,
-        },
-        "s9"
-      )
-      .to(
-        ".timeline-para9",
-        {
-          opacity: 0,
-          duration: 1,
-        },
-        "s9"
-      )
-      .to(".timeline-para10", {
-        opacity: 1,
-        duration: 0.3,
-      })
-      .to(
-        ".tlig9",
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          duration: 1,
-        },
-        "s9"
-      )
-      .to(
-        ".tlig10",
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 1,
-        },
-        "s9"
-      )
-      .to(
-        ".dot-10",
-        {
-          backgroundColor: "#000",
-        },
-        "i"
-      )
-      .to(
-        ".dot-out10",
-        {
-          scale: 1,
-        },
-        "i"
-      )
-      .to(
-        ".year10",
-        {
-          color: "black",
-        },
-        "i"
-      )
       .add("year2025")
 
       .to(
@@ -712,7 +637,7 @@ const Journey = () => {
       .to(
         ".present-year , .timeline-title",
         {
-          transform: "translateY(-1000%)",
+          transform: "translateY(-900%)",
           duration: 1,
         },
         "s10"
@@ -760,7 +685,7 @@ const Journey = () => {
         "j"
       )
       .to(
-        ".year11",
+        ".year10",
         {
           color: "black",
         },
@@ -777,34 +702,32 @@ const Journey = () => {
       year2019: tl.labels["year2019"] / tl.duration(),
       year2020: tl.labels["year2020"] / tl.duration(),
       year2021: tl.labels["year2021"] / tl.duration(),
-      year2024: tl.labels["year2024"] / tl.duration(),
       year2025: tl.labels["year2025"] / tl.duration(),
       year2027: tl.labels["year2027"] / tl.duration(),
     };
 
     ScrollTrigger.addEventListener("refreshInit", () => {
-  document.querySelectorAll("h2[data-year]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const year = btn.dataset.year;
-      const progress = yearProgressMap[year];
-      const st = tl.scrollTrigger;
+      document.querySelectorAll("h2[data-year]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const year = btn.dataset.year;
+          const progress = yearProgressMap[year];
+          const st = tl.scrollTrigger;
 
-      if (!st) {
-        console.error("ScrollTrigger not attached to timeline.");
-        return;
-      }
+          if (!st) {
+            console.error("ScrollTrigger not attached to timeline.");
+            return;
+          }
 
-      const scrollToY = st.start + (st.end - st.start) * progress;
+          const scrollToY = st.start + (st.end - st.start) * progress;
 
-      gsap.to(window, {
-        scrollTo: { y: scrollToY },
-        duration: 1,
-        ease: "power2.out",
+          gsap.to(window, {
+            scrollTo: { y: scrollToY },
+            duration: 1,
+            ease: "power2.out",
+          });
+        });
       });
     });
-  });
-});
-
 
     ScrollTrigger.refresh();
 
@@ -916,10 +839,6 @@ const Journey = () => {
               <div className="dot9 relative  sm:w-[3.5vw] w-[1.5vw] sm:h-[3.5vw] h-[1.5vw] flex items-center justify-center">
                 <div className="dot-9 w-[35%] h-[35%] bg-zinc-400 rounded-full "></div>
                 <div className="dot-out9 w-full h-full border border-[#000] scale-0 absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 rounded-full"></div>
-              </div>
-              <div className="dot10 relative  sm:w-[3.5vw] w-[1.5vw] sm:h-[3.5vw] h-[1.5vw] flex items-center justify-center">
-                <div className="dot-10 w-[35%] h-[35%] bg-zinc-400 rounded-full "></div>
-                <div className="dot-out10 w-full h-full border border-[#000] scale-0 absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="dot11 relative  sm:w-[3.5vw] w-[1.5vw] sm:h-[3.5vw] h-[1.5vw] flex items-center justify-center">
                 <div className="dot-11 w-[35%] h-[35%] bg-zinc-400 rounded-full "></div>
