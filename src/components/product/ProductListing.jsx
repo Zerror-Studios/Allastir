@@ -1,24 +1,23 @@
 import Image from "next/image";
-import React, { useContext, useState, useEffect } from "react";
-import { CartContext } from "../layout/Layout";
+import React, { useState, useEffect } from "react";
+import Cart from "../common/Cart";
 
 const ProductListing = ({ products }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const { setIsCartOpen, setEnquireItems } = useContext(CartContext);
+  // Local state for Cart
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleAddToBag = (product) => {
-    localStorage.removeItem("cartItems");
-    if (product) {
-      setEnquireItems(product);
-    }
+    setSelectedProduct(product);
     setIsCartOpen(true);
   };
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640); // tailwind's 'sm'
+      setIsMobile(window.innerWidth <= 640); // tailwind 'sm'
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -29,7 +28,7 @@ const ProductListing = ({ products }) => {
     <div className="relative w-full min-h-fit sm:p-[20px] sm:py-[10vw] p-[11%] py-[6vw] pb-[0vw]">
       <h2 className="sm:text-[7vw] md:text-[7vw] text-[3vw] leading-tight sm:mb-[6vw] mb-[6vw]">
         Advanced facilities built for quality. <br />
-Experts in niche and high-value APIs.
+        Experts in niche and high-value APIs.
       </h2>
 
       {/* Mobile Accordion */}
@@ -48,7 +47,6 @@ Experts in niche and high-value APIs.
                 {productCategory.title}
               </button>
 
-              {/* Accordion content */}
               {activeIndex === i && (
                 <div className="grid grid-cols-1 gap-4 p-4 bg-white">
                   {productCategory.product.map((product, idx) => (
@@ -174,6 +172,15 @@ Experts in niche and high-value APIs.
           alt="bg-image"
         />
       </div>
+
+      {/* Cart Component */}
+      {isCartOpen && selectedProduct && (
+        <Cart
+          isCartOpen={isCartOpen}
+          setIsCartOpen={setIsCartOpen}
+          productData={selectedProduct} // pass selected product
+        />
+      )}
     </div>
   );
 };
