@@ -1,6 +1,6 @@
 import React from "react";
-import { menus } from "@/helpers/MenuData";
 import { Const } from "@/utils/Constant";
+import { menus } from "@/helpers/MenuData";
 
 const SiteNavigationSchema = () => {
   const schemaData = {
@@ -11,12 +11,12 @@ const SiteNavigationSchema = () => {
   };
   menus.forEach((menu) => {
     schemaData.name.push(menu.name);
-    schemaData.url.push(`${Const.ClientLink}${menu.link}`);
+    schemaData.url.push(`${Const.ClientLink}${menu.path}`);
     if (menu && menu.submenus && menu.submenus.length > 0) {
       menu.submenus.forEach((submenu) => {
         if (submenu.name !== "All") {
           schemaData.name.push(submenu.name);
-          schemaData.url.push(`${Const.ClientLink}${submenu.link}`);
+          schemaData.url.push(`${Const.ClientLink}${submenu.path}`);
         }
       });
     }

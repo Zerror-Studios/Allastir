@@ -90,15 +90,16 @@ const Product = ({ meta, products }) => {
 export default Product;
 
 export async function getStaticProps() {
-  const meta = {
-    title: "Allastir Private Limited | High-Quality Niche APIs",
-    description:
-      "Explore Allastir’s range of high-quality niche APIs for pharmaceutical formulations, including tablets, capsules, soft gelatins, and oral liquids.",
-    keywords:
-      "Niche APIs, pharmaceutical APIs, API products, API formulations, drug ingredients, high-quality APIs, pharmaceutical manufacturing, custom APIs, research-based APIs, pharma solutions",
-    author: "Allastir",
-    robots: "index,follow",
-  };
+const meta = {
+  title: "High-Quality Niche API Products | Allastir Private Limited",
+  description:
+    "Explore Allastir’s portfolio of high-quality niche APIs developed for diverse pharmaceutical formulations, including tablets, capsules, soft gelatins, and oral liquids.",
+  keywords:
+    "niche APIs, pharmaceutical APIs, API products, drug ingredients, pharma formulations, high-quality APIs, pharmaceutical manufacturing, custom APIs, R&D APIs, pharma solutions",
+  author: "Allastir",
+  robots: "index,follow",
+};
+
   const products = [...productData].sort((a, b) =>
     a.title.localeCompare(b.title)
   );

@@ -64,15 +64,15 @@ const About = ({ meta, bluetxt, normaltxt }) => {
 export default About;
 
 export async function getStaticProps() {
-  const meta = {
-    title: "Allastir Private Limited | Innovating Niche APIs Since 2010",
-    description:
-      "Learn about Allastir, a leading manufacturer of high-quality niche APIs. Backed by strong R&D, we prioritize innovation, quality, and customer satisfaction.",
-    keywords:
-      "Allastir, about Allastir, pharmaceutical company, niche APIs, API manufacturing, pharma R&D, drug formulation, high-quality APIs, API solutions, pharma innovation",
-    author: "Allastir",
-    robots: "index,follow",
-  };
+const meta = {
+  title: "About | Allastir Private Limited",
+  description:
+    "Learn about Allastir, a leading manufacturer of high-quality niche APIs focused on innovation, quality, and customer satisfaction.",
+  keywords:
+    "Allastir, pharmaceutical company, niche APIs, API manufacturing, pharma R&D, high-quality APIs, pharma innovation",
+  author: "Allastir",
+  robots: "index,follow",
+};
 
   const bluetxt =
     "Allastir is a leading pharmaceutical innovator specializing in Active Pharmaceutical Ingredients (APIs), formulations, and dietary supplements.";

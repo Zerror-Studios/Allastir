@@ -4,25 +4,26 @@ const NewsMediaOrganizationSchema = ({
   name,
   clientLink,
   logoUrl,
-  addresses, // Now an array instead of a single object
+  address, // Should match the prop passed from SeoHeader
   contact,
   sameAs,
 }) => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "NewsMediaOrganization",
-    name: name, // Fixed incorrect destructuring
+    name: name,
     url: clientLink,
     logo: {
       "@type": "ImageObject",
       url: logoUrl,
     },
-    address: addresses?.map((address) => ({
+    address: address?.map((addr) => ({
       "@type": "PostalAddress",
-      streetAddress: address.streetAddress,
-      addressLocality: address.addressLocality,
-      addressRegion: address.addressRegion,
-      postalCode: address.postalCode,
+      streetAddress: addr.streetAddress,
+      addressLocality: addr.addressLocality,
+      addressRegion: addr.addressRegion,
+      postalCode: addr.postalCode,
+      addressCountry: addr.addressCountry ?? "IN",
     })),
     contactPoint: {
       "@type": "ContactPoint",
@@ -34,8 +35,9 @@ const NewsMediaOrganizationSchema = ({
         opens: contact?.hoursAvailable?.opens,
         closes: contact?.hoursAvailable?.closes,
       },
+      email: contact?.email,
     },
-    // sameAs: sameAs,
+    sameAs: sameAs, // Add the sameAs links
   };
 
   return (

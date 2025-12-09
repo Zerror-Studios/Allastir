@@ -28,14 +28,15 @@ export default Home;
 
 export async function getStaticProps() {
   const meta = {
-    title: "Allastir Private Limited | High-Quality Niche APIs",
+    title: "Allastir Private Limited",
     description:
-      "Allastir Private Limited specializes in high-quality niche APIs for the pharmaceutical industry. Backed by strong R&D, we ensure innovation, precision, and reliability.",
+      "Allastir Private Limited is a leading manufacturer of high-quality niche APIs in India. Backed by strong R&D, we deliver innovation, precision, and reliability to the pharmaceutical industry.",
     keywords:
-      "Niche APIs, pharmaceutical APIs, API manufacturing, high-quality APIs, pharmaceutical ingredients, research-based APIs, custom API solutions, API formulations, pharmaceutical R&D, drug formulation APIs",
+      "niche APIs India, pharmaceutical APIs India, API manufacturing India, high-quality APIs, pharma ingredients, research-based APIs, custom API solutions, pharmaceutical R&D",
     author: "Allastir",
     robots: "index,follow",
   };
+
   const products = productData;
   const bluetxt =
     "Allastir is a globally recognized leader in pharmaceutical innovation, driving advancements in Active Pharmaceutical Ingredients (APIs), pharmaceutical formulations, and dietary supplements.";
