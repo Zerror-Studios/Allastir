@@ -1,4 +1,5 @@
 import { menus } from "@/helpers/MenuData";
+import useBrochureStore from "@/stores/brochureStore";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,7 @@ import React, { useState } from "react";
 const Navbar = ({ navRef }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const { openPopup } = useBrochureStore();
 
   const openSidebar = () => {
     if (open) {
@@ -52,26 +54,24 @@ const Navbar = ({ navRef }) => {
         />
       </Link>
 
+      {/* Desktop/Top Menu */}
       <div className="sm:hidden md:hidden lg:hidden absolute top-1/2 left-1/2 -translate-x-1/2 xl:text-[1.8vw] text-[1.1vw] font-regular capitalize -translate-y-1/2 flex items-center gap-[3vw]">
         {menus.map(({ path, name }, index) =>
           name === "Brochure" ? (
-            <a
-              href={path}
-              target="_blank"
+            <button
               key={index}
-              className="hover:text-[#E31E23]  transition-all duration-75  relative cursor-pointer"
+              onClick={openPopup}
+              className="hover:text-[#E31E23] transition-all duration-75 relative cursor-pointer"
             >
               {name}
-            </a>
+            </button>
           ) : (
             name !== "Contact" && (
               <Link
                 key={index}
                 href={path}
-                className={`  transition-all duration-75 relative ${
-                  router.pathname === path
-                    ? "text-[#E31E23]"
-                    : "hover:text-[#E31E23]"
+                className={`transition-all duration-75 relative ${
+                  router.pathname === path ? "text-[#E31E23]" : "hover:text-[#E31E23]"
                 }`}
               >
                 {name}
@@ -84,7 +84,7 @@ const Navbar = ({ navRef }) => {
       <div className="flex items-center gap-[50px]">
         <Link
           href="/contact"
-          className={` sm:hidden md:hidden lg:hidden bg-[#DD2B1C]  text-white py-[.6vw] rounded-full font-semibold p-[2vw]  transition-all duration-75 relative"}`}
+          className="sm:hidden md:hidden lg:hidden bg-[#DD2B1C] text-white py-[.6vw] rounded-full font-semibold p-[2vw] transition-all duration-75 relative"
         >
           Contact
         </Link>
@@ -93,23 +93,27 @@ const Navbar = ({ navRef }) => {
           className="menu-icon cursor-pointer ri-menu-fill text-[5.5vw] lg:text-[3.3vw] sm:block md:block lg:block hidden font-semibold"
         ></i>
       </div>
-      <div className="side-menu duration-300 w-[100%] sm:pt-[20vw] bg-white h-[90dvh] absolute top-[100%] opacity-0 pointer-events-none left-0 text-black sm:flex  sm:flex-col sm:justify-between md:flex lg:flex  hidden justify-end capitalize  text-left text-[5.5vw] lg:text-[3.5vw]">
+
+      {/* Side Menu */}
+      <div className="side-menu duration-300 w-[100%] sm:pt-[20vw] bg-white h-[90dvh] absolute top-[100%] opacity-0 pointer-events-none left-0 text-black sm:flex sm:flex-col sm:justify-between md:flex lg:flex hidden justify-end capitalize text-left text-[5.5vw] lg:text-[3.5vw]">
         <div className="w-full h-fit relative flex flex-col gap-[2vw] justify-center items-end bg-white p-[4vw]">
           {menus.map(({ path, name }, index) =>
             name === "Brochure" ? (
-              <a
-                href={path}
-                target="_blank"
+              <button
                 key={index}
+                onClick={() => {
+                  openPopup();
+                  openSidebar(); // close sidebar after opening popup
+                }}
                 className="hover:opacity-[.8] relative cursor-pointer"
               >
                 {name}
-              </a>
+              </button>
             ) : (
               <Link
                 key={index}
                 href={path}
-                className={`hover:opacity-[.8] relative`}
+                className="hover:opacity-[.8] relative"
               >
                 {name}
               </Link>
@@ -118,7 +122,7 @@ const Navbar = ({ navRef }) => {
         </div>
         <div className="w-full flex items-center justify-between text-[4.5vw] p-[4vw]">
           <p>Contact</p>
-          <p>Info@allastir.com</p>
+          <p><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
         </div>
       </div>
     </div>

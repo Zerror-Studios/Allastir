@@ -1,4 +1,5 @@
 import { menus } from "@/helpers/MenuData";
+import useBrochureStore from "@/stores/brochureStore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,6 +7,7 @@ import React from "react";
 
 const Footer = () => {
   const router = useRouter();
+  const { openPopup } = useBrochureStore();
 
   return (
     <div className="w-full bg-[#DD2B1C]  text-white  h-[auto] p-[4vw] sm:p-[4vw] md:p-[4vw] lg:p-[4vw] sm:pb-[8vw] md:pb-[4vw] lg:pb-[4vw] px-[2.5vw]">
@@ -28,10 +30,10 @@ const Footer = () => {
             </h2>
             <div className="flex flex-col gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
               {menus.map(({ path, name }, index) =>
-                path === "/Allaster_Brochure.pdf" ? (
+                name === "Brochure" ? (
                   <span
                     key={index}
-                    onClick={() => handlePdf()}
+                    onClick={openPopup}
                     className="cursor-pointer hover:text-gray-300 w-fit"
                   >
                     {name}
