@@ -21,16 +21,16 @@ const Section2 = ({ sec2Ref }) => {
           Careers at Allastir
         </h1>
 
-        <p className="text-zinc-700 sm:text-[4vw] md:text-[3vw] text-[1vw] mb-[2.5vw] w-[80%]">
+        <p className="text-zinc-700 sm:text-[4vw] md:text-[3vw] text-[1vw] sm:mb-[4vw]  mb-[2.5vw] w-[80%]">
           We’re always looking for passionate individuals to join our team.
         </p>
 
         {/* UPDATED GRID: ALWAYS 2 columns on desktop */}
-        <div className="grid grid-cols-2 gap-[2vw]">
+        <div className="grid sm:grid-cols-1 grid-cols-2 sm:gap-[4vw] gap-[2vw]">
           {jobOpenings.map((job) => (
             <div
               key={job.id}
-              className="border p-[2vw] rounded-xl shadow-sm hover:border-[#DD2B1C] transition"
+              className="border sm:p-[5vw] p-[2vw] rounded-xl shadow-sm hover:border-[#DD2B1C] transition"
             >
               <h2 className="text-[1.5vw] sm:text-[5vw] font-bold mb-2">
                 {job.position}
@@ -50,7 +50,7 @@ const Section2 = ({ sec2Ref }) => {
 
               <button
                 onClick={() => handleApplyClick(job.position)}
-                className="bg-[#DD2B1C]  text-white py-[.6vw] rounded-full font-semibold p-[2vw]  transition-all duration-75 relative mt-4"
+                className="bg-[#DD2B1C]  text-white sm:py-[1.5vw] py-[.6vw] rounded-full font-semibold sm:p-[6vw] p-[2vw]  transition-all duration-75 relative mt-4"
               >
                 Apply Now
               </button>

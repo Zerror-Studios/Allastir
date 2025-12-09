@@ -95,7 +95,7 @@ const PopupForm = ({ position, closePopup }) => {
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[999]">
-      <div className="bg-white rounded-2xl p-[2vw] w-[45vw] sm:w-[90vw] relative">
+      <div className="bg-white rounded-2xl sm:p-[4vw] p-[2vw] w-[45vw] sm:w-[90vw] relative">
         <button onClick={closePopup} className="absolute top-3 right-3 text-xl">
           <i className="ri-close-large-line"></i>
         </button>
@@ -119,7 +119,7 @@ const PopupForm = ({ position, closePopup }) => {
             </p>
           )}
 
-          <div className="relative mb-3">
+          <div className="relative sm:mb-6 mb-3">
             <input
               type="text"
               placeholder="Full Name"
@@ -133,7 +133,7 @@ const PopupForm = ({ position, closePopup }) => {
             )}
           </div>
 
-          <div className="relative mb-3">
+          <div className="relative sm:mb-6 mb-3">
             <input
               type="email"
               placeholder="Email Address"
@@ -147,7 +147,7 @@ const PopupForm = ({ position, closePopup }) => {
             )}
           </div>
 
-          <div className="relative mb-3">
+          <div className="relative sm:mb-6 mb-3">
             <input
               type="text"
               placeholder="Phone Number"
@@ -161,7 +161,7 @@ const PopupForm = ({ position, closePopup }) => {
             )}
           </div>
 
-          <div className="relative mb-3">
+          <div className="relative sm:mb-6 mb-3">
             <input
               type="url"
               placeholder="Resume URL"
@@ -175,7 +175,7 @@ const PopupForm = ({ position, closePopup }) => {
             )}
           </div>
 
-          <div className="relative mb-3">
+          <div className="relative sm:mb-6 mb-3">
             <textarea
               placeholder="Remarks"
               name="remarks"
@@ -189,7 +189,7 @@ const PopupForm = ({ position, closePopup }) => {
           </div>
 
           <button
-            className="bg-[#000] text-white py-[.6vw] rounded-full font-semibold p-[2vw] transition-all duration-75 relative mt-4"
+            className="bg-[#000] text-white sm:py-[2vw] py-[.6vw] rounded-full font-semibold p-[2vw] transition-all duration-75 relative sm:mt-2 mt-4"
             type="submit"
             disabled={loading}
           >
