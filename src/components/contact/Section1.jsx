@@ -12,8 +12,7 @@ const Section1 = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); 
-
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -113,14 +112,14 @@ const Section1 = () => {
           {/* SUCCESS MESSAGE */}
           {successMessage && (
             <p className="text-green-600 text-xs w-fit bg-green-600/10 p-2 border rounded border-green-600  font-semibold mb-2">
-             <i class="ri-error-warning-line"></i> {successMessage}
+              <i class="ri-error-warning-line"></i> {successMessage}
             </p>
           )}
 
           {/* ERROR MESSAGE */}
           {errorMessage && (
             <p className="text-red-600 text-xs w-fit bg-red-600/10 p-2 border rounded border-red-600  font-semibold mb-2">
-             <i class="ri-error-warning-line"></i> {errorMessage}
+              <i class="ri-error-warning-line"></i> {errorMessage}
             </p>
           )}
 
@@ -220,7 +219,23 @@ const Section1 = () => {
             <h4 className="mt-[1vw] text-[1vw] font-semibold">
               E-Mail Address
             </h4>
-            <p className="text-[1.05vw] text-black/70"><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
+            <p className="text-[1.05vw] text-black/70">
+              <a href="mailto:sales@allastir.com">sales@allastir.com</a>
+            </p>
+            <p className="text-[1.05vw] mt-[0.5vw]">
+              <a href="tel:+91-97910 39207">
+                <span className="text-[1vw] font-semibold">Mobile No. :</span>{" "}
+                <span className="text-black/70">+91-97910 39207</span>
+              </a>
+            </p>
+            <p className="text-[1.05vw]">
+              <a href="tel:+91-98400 51621">
+                <span className="text-[1vw] font-semibold">
+                  Telephone No. :
+                </span>{" "}
+                <span className="text-black/70">+91-98400 51621</span>
+              </a>
+            </p>
           </div>
         </div>
 
@@ -241,10 +256,26 @@ const Section1 = () => {
               8-17, 8-18, APIIC Industrial Park, Attivaram Village, Ozili
               Mandal, Tirupati District, Andhra Pradesh -524 421.
             </a>
-            <h4 className="mt-[1vw] text-[1vw] font-semibold">
+            <h4 className="mt-[0.5vw] text-[1vw] font-semibold">
               E-Mail Address
             </h4>
-            <p className="text-[1.05vw] text-black/70"><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
+            <p className="text-[1.05vw] text-black/70">
+              <a href="mailto:sales@allastir.com">sales@allastir.com</a>
+            </p>
+            <p className="text-[1.05vw] mt-[0.5vw]">
+              <a href="tel:+91-97910 39207">
+                <span className="text-[1vw] font-semibold">Mobile No. :</span>{" "}
+                <span className="text-black/70">+91-97910 39207</span>
+              </a>
+            </p>
+            <p className="text-[1.05vw]">
+              <a href="tel:+91-98400 51621">
+                <span className="text-[1vw] font-semibold">
+                  Telephone No. :
+                </span>{" "}
+                <span className="text-black/70">+91-98400 51621</span>
+              </a>
+            </p>
           </div>
         </div>
       </div>

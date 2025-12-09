@@ -8,7 +8,7 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full bg-[#DD2B1C]  text-white sm:h-fit md:h-[100vh] lg:h-[95vh] h-[50vh] p-[4vw] sm:p-[4vw] md:p-[4vw] lg:p-[4vw] sm:pb-[8vw] md:pb-[4vw] lg:pb-[4vw] px-[2.5vw]">
+    <div className="w-full bg-[#DD2B1C]  text-white  h-[auto] p-[4vw] sm:p-[4vw] md:p-[4vw] lg:p-[4vw] sm:pb-[8vw] md:pb-[4vw] lg:pb-[4vw] px-[2.5vw]">
       <div className="w-full h-full flex sm:flex-col md:flex-col lg:flex-col sm:justify-between md:justify-between lg:justify-between justify-between">
         <div className="sm:w-full lg:w-full md:w-full sm:h-fit lg:h-fit md:h-fit h-full flex flex-col justify-between">
           <Link href="/" className="sm:hidden">
@@ -73,9 +73,29 @@ const Footer = () => {
                 <a
                   target="_blank"
                   href="mailto:sales@allastir.com"
-                  className="hover:text-gray-300 sm:text-[4vw]"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
                 >
-                   sales@allastir.com
+                  sales@allastir.com
+                </a>
+              </span>
+              <span>
+                <strong>Mobile No. : </strong>{" "}
+                <a
+                  target="_blank"
+                  href="tel:+91-97910 39207"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
+                >
+                  +91-97910 39207
+                </a>
+              </span>
+              <span>
+                <strong>Telephone No. : </strong>{" "}
+                <a
+                  target="_blank"
+                  href="tel:+91-98400 51621"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
+                >
+                  +91-98400 51621
                 </a>
               </span>
             </div>
@@ -119,9 +139,29 @@ const Footer = () => {
                 <a
                   target="_blank"
                   href="mailto:sales@allastir.com"
-                  className="hover:text-gray-300 sm:text-[4vw]"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
                 >
-                   sales@allastir.com
+                  sales@allastir.com
+                </a>
+              </span>
+              <span>
+                <strong>Mobile No. : </strong>{" "}
+                <a
+                  target="_blank"
+                  href="tel:+91-97910 39207"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
+                >
+                  +91-97910 39207
+                </a>
+              </span>
+              <span>
+                <strong>Telephone No. : </strong>{" "}
+                <a
+                  target="_blank"
+                  href="tel:+91-98400 51621"
+                  className="hover:text-gray-300 lowercase sm:text-[4vw]"
+                >
+                  +91-98400 51621
                 </a>
               </span>
             </div>

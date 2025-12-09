@@ -23,6 +23,8 @@ const Section2 = ({ sec2Ref }) => {
 
         <p className="text-zinc-700 sm:text-[4vw] md:text-[3vw] text-[1vw] sm:mb-[4vw]  mb-[2.5vw] w-[80%]">
           We’re always looking for passionate individuals to join our team.
+          <br /> If you don’t see a suitable opening listed below, feel free to
+          share your resume at <a href="mailto:career@gmail.com"><strong>career@allastir.com</strong></a>.
         </p>
 
         {/* UPDATED GRID: ALWAYS 2 columns on desktop */}
