@@ -113,6 +113,9 @@ const Navbar = ({ navRef }) => {
               <Link
                 key={index}
                 href={path}
+                 onClick={() => {
+                  openSidebar();
+                }}
                 className="hover:opacity-[.8] relative"
               >
                 {name}
