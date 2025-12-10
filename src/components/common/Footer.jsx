@@ -187,7 +187,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-ful flex justify-between items-end sm:flex-col-reverse sm:items-start sm:gap-[5vw] sm:mt-[5vw]">
+      <div className="w-ful flex justify-between items-end sm:flex-col-reverse sm:items-start sm:gap-[5vw] sm:mt-[5vw] mt-[5vw]">
         <div>
           <p className="sm:text-[3.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw] opacity-[.9]">
             All Rights Reserved © Allastir Pvt. Ltd.
