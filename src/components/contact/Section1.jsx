@@ -94,7 +94,7 @@ const Section1 = () => {
     <div className="w-full min-h-screen flex sm:flex-col md:flex-col lg:flex-col sm:gap-[6vw] md:gap-[6vw] lg:gap-[6vw] gap-[1vw] items-center p-[2.5vw] sm:pt-[35vw] md:pt-[20vw] lg:pt-[15vw] sm:px-[4vw] md:px-[4vw] lg:px-[4vw] pt-[5.5vw]">
       <div className="sm:w-full md:w-full lg:w-full w-[50%] sm:h-fit md:h-fit h-[85vh] sm:bg-transparent md:bg-transparent bg-zinc-100/40 rounded-2xl sm:p-0 md:p-0 p-[2.5vw] flex flex-col justify-between">
         <div className="w-full">
-          <h1 className="sm:font-semibold sm:text-[7vw] md:text-[7vw] text-[3vw] sm:mb-[6vw] capitalize leading-none">
+          <h1 className="sm:font-semibold sm:text-[7vw] md:text-[7vw] text-[3vw] sm:mb-[3vw] capitalize leading-none">
             Contact us
           </h1>
           <p className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.2vw] sm:w-full md:w-full text-[1vw] w-[80%] sm:my-[4.5vw] md:my-[4.5vw] lg:my-[4.5vw] my-[1vw] leading-1">

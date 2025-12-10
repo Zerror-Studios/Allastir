@@ -17,7 +17,7 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Update product data in form whenever selected product changes
+  // Update product data
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -28,11 +28,10 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "phone") {
-      setFormData((prev) => ({ ...prev, [name]: value.replace(/\D/g, "") }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? value.replace(/\D/g, "") : value,
+    }));
   };
 
   const validateForm = () => {
@@ -42,9 +41,11 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
 
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
-    else if (!phoneRegex.test(formData.phone)) newErrors.phone = "Phone must be 10 digits";
+    else if (!phoneRegex.test(formData.phone))
+      newErrors.phone = "Phone must be 10 digits";
     if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!emailRegex.test(formData.email)) newErrors.email = "Invalid email format";
+    else if (!emailRegex.test(formData.email))
+      newErrors.email = "Invalid email format";
     if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
@@ -79,12 +80,10 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
       setErrors({});
       setSuccessMessage("Form submitted successfully!");
 
-      // Close cart after 0.5s
       setTimeout(() => {
         setIsCartOpen(false);
         setSuccessMessage("");
       }, 2500);
-
     } catch (error) {
       setErrorMessage("Submission failed. Please try again.");
       console.error(error);
@@ -102,14 +101,25 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
     const tl = gsap.timeline();
 
     if (isCartOpen) {
-      gsap.set(cartContainer, { right: "-50%" });
+      gsap.set(cartContainer, { right: "-100%" });
       gsap.set(cartOverlay, { visibility: "visible" });
 
-      tl.to(cartOverlay, { opacity: 1, backgroundColor: "#00000070", duration: 0.5 })
-        .to(cartContainer, { right: "0%", duration: 0.8, ease: "power3.out" }, "-=0.4");
+      tl.to(cartOverlay, {
+        opacity: 1,
+        backgroundColor: "#00000070",
+        duration: 0.5,
+      }).to(
+        cartContainer,
+        { right: "0%", duration: 0.8, ease: "power3.out" },
+        "-=0.4"
+      );
     } else {
       tl.to(cartOverlay, { backgroundColor: "transparent", duration: 0.3 })
-        .to(cartContainer, { right: "-50%", duration: 0.6, ease: "power3.in" }, "-=0.3")
+        .to(
+          cartContainer,
+          { right: "-100%", duration: 0.6, ease: "power3.in" },
+          "-=0.3"
+        )
         .set(cartOverlay, { visibility: "hidden" });
 
       setErrors({});
@@ -131,42 +141,42 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
   return (
     <div
       id="cartOverlay"
-      className="fixed top-0 left-0 w-full sm:h-[100dvh] h-screen bg-[#00000070] opacity-0 invisible z-[999] flex justify-end"
+      className="fixed top-0 left-0 w-full h-[100dvh] bg-[#00000070] opacity-0 invisible z-[999] flex justify-end"
       onClick={() => setIsCartOpen(false)}
     >
       <div
         id="cartContainer"
-        className="absolute right-[-50%] top-0 sm:w-[100vw] md:w-[100vw] lg:w-[100vw] xl:w-[60vw] w-[40vw] h-full bg-white shadow-lg sm:pt-[30px] p-4 overflow-hidden"
+        data-lenis-prevent
+        className="absolute right-[-100%] top-0 sm:w-full md:w-[80vw] lg:w-[70vw] xl:w-[60vw] w-[38vw] h-full bg-white shadow-lg p-6 sm:p-4 overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full sm:h-[95vh] h-[100vh] p-[2vw] py-[0] pb-[2vw] flex flex-col justify-between">
-          <div className="w-full">
-            <h1 className="sm:text-[10vw] md:text-[7vw] lg:text-[7vw] xl:text-[5vw] text-[3.5vw] sm:font-semibold capitalize leading-none">
+        <div className="w-full flex flex-col justify-between h-full">
+          <div className="mb-5">
+            <h1 className="text-[3vw] sm:text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight">
               Enquire Now
             </h1>
-            <p className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[3vw] xl:text-[2vw] sm:w-full text-[1vw] w-[80%] my-[1vw] leading-1">
-              Have questions or need product details? Fill out the form and our team will get back to you shortly.
+
+            <p className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.2vw] sm:w-full md:w-full text-[1vw] w-[80%] sm:my-[4.5vw] md:my-[4.5vw] lg:my-[4.5vw] my-[1vw] leading-1">
+              Have questions or need product details? Fill out the form and our
+              team will get back to you shortly.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="w-full mt-[1.5vw] flex flex-col gap-[1vw] text-[1.1vw]">
-            {/* SUCCESS MESSAGE */}
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {successMessage && (
-              <p className="text-green-600 text-xs w-fit bg-green-600/10 p-2 border rounded border-green-600 font-semibold mb-2">
-                <i className="ri-error-warning-line"></i> {successMessage}
+              <p className="text-green-600 bg-green-100 p-2 rounded border border-green-600 text-sm font-semibold">
+                {successMessage}
               </p>
             )}
-
-            {/* ERROR MESSAGE */}
             {errorMessage && (
-              <p className="text-red-600 text-xs w-fit bg-red-600/10 p-2 border rounded border-red-600 font-semibold mb-2">
-                <i className="ri-error-warning-line"></i> {errorMessage}
+              <p className="text-red-600 bg-red-100 p-2 rounded border border-red-600 text-sm font-semibold">
+                {errorMessage}
               </p>
             )}
 
             {productData && (
-              <div className="flex items-center p-2 bg-gray-100 rounded">
-                <div className="w-[60px] h-[60px] relative overflow-hidden bg-white">
+              <div className="flex items-center gap-4 p-2 bg-gray-100 rounded">
+                <div className="w-16 h-16 relative bg-white overflow-hidden">
                   <Image
                     width={1000}
                     height={1000}
@@ -175,46 +185,54 @@ const Cart = ({ isCartOpen, setIsCartOpen, productData }) => {
                     alt={productData.name}
                   />
                 </div>
-                <div className="ml-4">
+                <div>
                   <h2 className="font-semibold">{productData.name}</h2>
-                  <p>{productData.description}</p>
+                  <p className="text-sm">{productData.description}</p>
                 </div>
               </div>
             )}
 
             {["name", "phone", "email"].map((field) => (
-              <div key={field} className="w-full flex flex-col">
-                {errors[field] && <span className="text-red-500 text-sm mb-1">{errors[field]}</span>}
+              <div key={field} className="flex flex-col">
+                {errors[field] && (
+                  <span className="text-red-500 text-sm mb-1">
+                    {errors[field]}
+                  </span>
+                )}
                 <input
                   name={field}
                   value={formData[field]}
                   onChange={handleChange}
                   type="text"
                   placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                  className="w-full p-2 border border-black/20 rounded-md bg-transparent"
+                  className="w-full p-3 border border-black/20 rounded-md bg-transparent"
                 />
               </div>
             ))}
 
-            <div className="w-full flex flex-col">
-              {errors.message && <span className="text-red-500 text-sm mb-1">{errors.message}</span>}
+            <div className="flex flex-col">
+              {errors.message && (
+                <span className="text-red-500 text-sm mb-1">
+                  {errors.message}
+                </span>
+              )}
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Write additional information"
-                className="w-full resize-none h-[7vw] p-2 border border-black/20 rounded-md bg-transparent"
+                className="w-full resize-none p-3 border border-black/20 rounded-md h-40 sm:h-48 md:h-52"
               />
             </div>
 
-            <button className="bg-black text-white w-full py-2 rounded-full mt-2">
+            <button className="bg-black text-white mb-4 w-full sm:py-3 py-[.6vw] font-semibold p-[2vw] rounded-full mt-2 text-lg">
               {isLoading ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
 
         <button
-          className="absolute top-[20px] right-[40px] text-xl text-black hover:text-gray-800"
+          className="absolute top-5 right-5 text-2xl text-black hover:text-gray-800"
           onClick={() => setIsCartOpen(false)}
         >
           <i className="ri-close-line"></i>

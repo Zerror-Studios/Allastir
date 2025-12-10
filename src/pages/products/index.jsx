@@ -2,7 +2,7 @@ import Section1 from "@/components/product/Section1";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SeoHeader from "@/components/seo/SeoHeader";
-import { productData } from "@/helpers/ProductData";
+import { productCategories } from "@/helpers/ProductData";
 import ProductListing from "@/components/product/ProductListing";
 
 const Product = ({ meta, products }) => {
@@ -81,7 +81,7 @@ const Product = ({ meta, products }) => {
       <SeoHeader meta={meta} />
       <div className="w-full relative overflow-hidden">
         <Section1 sec1Ref={sec1Ref} />
-        <ProductListing products={products} />
+        <ProductListing allCategories={products} />
       </div>
     </>
   );
@@ -100,9 +100,7 @@ const meta = {
   robots: "index,follow",
 };
 
-  const products = [...productData].sort((a, b) =>
-    a.title.localeCompare(b.title)
-  );
+  const products = productCategories;
 
   return { props: { meta, products } };
 }

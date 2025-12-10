@@ -17,14 +17,17 @@ const Section2 = ({ sec2Ref }) => {
         ref={sec2Ref}
         className="w-full min-h-screen sm:p-[20px] sm:py-[10vw] p-[11%] py-[6vw] bg-white"
       >
-        <h1 className="sm:text-[7vw] md:text-[6vw] text-[3vw] font-semibold">
+        <h1 className="sm:font-semibold sm:text-[7vw] md:text-[7vw] text-[3vw] sm:mb-[3vw] capitalize leading-none">
           Careers at Allastir
         </h1>
-
-        <p className="text-zinc-700 sm:text-[4vw] md:text-[3vw] text-[1vw] sm:mb-[4vw]  mb-[2.5vw] w-[80%]">
+        <p className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.2vw] sm:w-full md:w-full text-[1vw] w-[80%] sm:my-[4.5vw] md:my-[4.5vw] lg:my-[4.5vw] my-[1vw] leading-1">
           We’re always looking for passionate individuals to join our team.
-          <br /> If you don’t see a suitable opening listed below, feel free to
-          share your resume at <a href="mailto:career@gmail.com"><strong>career@allastir.com</strong></a>.
+          <br className="sm:hidden" /> If you don’t see a suitable opening
+          listed below, feel free to share your resume at{" "}
+          <a href="mailto:career@gmail.com">
+            <strong>career@allastir.com</strong>
+          </a>
+          .
         </p>
 
         {/* UPDATED GRID: ALWAYS 2 columns on desktop */}
@@ -32,28 +35,34 @@ const Section2 = ({ sec2Ref }) => {
           {jobOpenings.map((job) => (
             <div
               key={job.id}
-              className="border sm:p-[5vw] p-[2vw] rounded-xl shadow-sm hover:border-[#DD2B1C] transition"
+              className="border sm:p-[5vw] p-[2vw] rounded-xl flex flex-col justify-between shadow-sm hover:border-[#DD2B1C] transition"
             >
-              <h2 className="text-[1.5vw] sm:text-[5vw] font-bold mb-2">
-                {job.position}
-              </h2>
+              <div>
+                <h2 className="text-[1.5vw] sm:text-[5vw] font-bold mb-2">
+                  {job.position}
+                </h2>
 
-              <p className="text-zinc-700 text-[1vw] sm:text-[4vw]">
-                <strong>Experience:</strong> {job.experience}
-              </p>
+                <p className="text-zinc-700 text-[1vw] sm:text-[4vw]">
+                  <strong>Experience:</strong> {job.experience}
+                </p>
 
-              <p className="text-zinc-700 text-[1vw] sm:text-[4vw] mt-1">
-                <strong>Skills:</strong> {job.skills}
-              </p>
+                <p className="text-zinc-700 text-[1vw] sm:text-[4vw] mt-1">
+                  <strong>Skills:</strong> {job.skills}
+                </p>
 
-              <p className="text-zinc-700 text-[1vw] sm:text-[4vw] mt-1">
-                <strong>Location:</strong> {job.location}
-              </p>
+                <p className="text-zinc-700 text-[1vw] sm:text-[4vw] mt-1">
+                  <strong>Location:</strong> {job.location}
+                </p>
+              </div>
 
               <button
                 onClick={() => handleApplyClick(job.position)}
-                className="bg-[#DD2B1C]  text-white sm:py-[1.5vw] py-[.6vw] rounded-full font-semibold sm:p-[6vw] p-[2vw]  transition-all duration-75 relative mt-4"
+                className="
+          text-center sm:text-[12px] text-[14px] sm:py-[12px] py-[12px] sm:px-[20px]  px-[30px]
+                font-semibold rounded-full border border-gray-300 cursor-pointer
+           bg-[#DD2B1C] text-white sm:w-full w-fit mt-4"
               >
+                {" "}
                 Apply Now
               </button>
             </div>

@@ -95,7 +95,7 @@ const PopupForm = ({ position, closePopup }) => {
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[999]">
-      <div className="bg-white rounded-2xl sm:p-[4vw] p-[2vw] w-[45vw] sm:w-[90vw] relative">
+      <div className="bg-white rounded-2xl sm:p-[4vw] sm:py-[8vw] p-[2vw] w-[45vw] sm:w-[90vw] relative">
         <button onClick={closePopup} className="absolute top-3 right-3 text-xl">
           <i className="ri-close-large-line"></i>
         </button>
@@ -189,7 +189,7 @@ const PopupForm = ({ position, closePopup }) => {
           </div>
 
           <button
-            className="bg-[#000] text-white sm:py-[2vw] py-[.6vw] rounded-full font-semibold p-[2vw] transition-all duration-75 relative sm:mt-2 mt-4"
+            className="bg-[#000] text-white sm:py-3  py-[.6vw] rounded-full font-semibold p-[2vw] transition-all duration-75 relative sm:mt-2 mt-4"
             type="submit"
             disabled={loading}
           >

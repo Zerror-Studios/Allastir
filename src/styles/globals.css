@@ -159,7 +159,7 @@ body {
 }
 
 #scroll-bar::-webkit-scrollbar {
-  width: 5px;
+  width: 1px;
 }
 #scroll-bar::-webkit-scrollbar-thumb {
   background-color: rgba(136, 136, 136, 0.53);
@@ -188,6 +188,26 @@ body {
 
 .product-marquee:hover {
   animation-play-state: paused;
+}
+
+
+
+
+/* Thin red scrollbars for main and sub scroll areas */
+#main-scroll::-webkit-scrollbar,
+#sub-scroll::-webkit-scrollbar {
+  height: 3px; /* horizontal scrollbar height */
+}
+
+#main-scroll::-webkit-scrollbar-thumb,
+#sub-scroll::-webkit-scrollbar-thumb {
+  background-color: #DD2B1C; /* red color */
+  border-radius: 10px;
+}
+
+#main-scroll::-webkit-scrollbar-track,
+#sub-scroll::-webkit-scrollbar-track {
+  background: #f3f3f3; /* light gray track */
 }
 
 

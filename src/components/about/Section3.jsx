@@ -24,12 +24,9 @@ const Section3 = () => {
                 {bars.map((bar,i) => (
                     <div
                         key={bar.id}
-                        className={`w-full relative border-t ${i === bars.length - 1 && "border-b"} sm:py-[4vw] md:py-[4vw] py-[.5vw] sm:h-[55vw] md:h-[45vw] lg:h-[28vw] xl:h-[20vw] h-[12vw] flex sm:flex-col md:flex-col justify-between border-black/20 px-[1.7vw]`}
+                        className={`w-full relative border-t ${i === bars.length - 1 && "border-b"} sm:py-[4vw] md:py-[4vw] py-[.5vw] sm:h-[55vw] md:h-[45vw] lg:h-[28vw] xl:h-[20vw] h-[12vw] flex sm:flex-col md:flex-col justify-between border-gray-600 px-[1.7vw]`}
                     >
-                        <div className="flex w-[50%] items-center sm:hidden md:text-[3.5vw] text-[2vw]">
-                            <h2>{bar.title}</h2>
-                        </div>
-                        <div className="flex  sm:w-full md:w-full  sm:mt-[2vw] md:mt-[2vw] gap-[2vw] w-[50%] sm:items-start md:items-start items-center">
+                        <div className="flex  w-full  sm:mt-[2vw] md:mt-[2vw] gap-[2vw] sm:items-start md:items-start items-center justify-between">
                             <Image
                             width={1000}
                             height={1000}
@@ -37,8 +34,8 @@ const Section3 = () => {
                                 src={bar.image}
                                 alt={bar.title}
                             />
-                            <div>
-                                <h4 className=" lg:hidden sm:text-[5vw] md:text-[4vw] lg:text-[3vw] xl:text-[2vw] mb-[5vw] text-[1.1vw] font-semibold">{bar.title}</h4>
+                            <div className='sm:w-full w-[80%]'>
+                                <h4 className=" lg:hidden sm:text-[5vw] md:text-[4vw] lg:text-[3vw] xl:text-[2vw] mb-[2vw] text-[2vw] font-semibold">{bar.title}</h4>
                                 <p className="sm:text-[5vw] md:text-[4vw] lg:text-[3vw] xl:text-[2vw] text-[1vw] sm:font-normal font-semibold">{bar.description}</p>
                             </div>
                         </div>
