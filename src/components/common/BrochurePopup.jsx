@@ -12,10 +12,12 @@ const BrochurePopup = () => {
     state: "",
     city: "",
   });
+  const [locationLoaded, setLocationLoaded] = useState(false);
 
-  // Fetch user location on mount
+  // Fetch user location when popup opens
   useEffect(() => {
     if (!isOpen) return;
+
     const fetchLocation = async () => {
       try {
         const res = await fetch("/api/get-location");
@@ -26,9 +28,10 @@ const BrochurePopup = () => {
           state: data.region || "",
           city: data.city || "",
         });
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
         setLocation({ country: "", state: "", city: "" });
+      } finally {
+        setLocationLoaded(true);
       }
     };
 
@@ -45,24 +48,22 @@ const BrochurePopup = () => {
     try {
       const res = await fetch("/api/brochure-requests", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          country: location.country,
-          state: location.state,
-          city: location.city,
+          country: location.country || null,
+          state: location.state || null,
+          city: location.city || null,
         }),
       });
 
       if (res.ok) {
         setSubmitted();
       } else {
+        const data = await res.json();
         setError("Something went wrong. Please try again.");
       }
     } catch (err) {
-      console.error(err);
       setError("Submission failed. Please try again.");
     } finally {
       setLoading(false);
@@ -108,10 +109,12 @@ const BrochurePopup = () => {
               />
               <button
                 type="submit"
+                disabled={loading || !locationLoaded}
                 className={`bg-red-600 text-white py-2 rounded font-semibold hover:bg-[#DD2B1C] transition-colors text-sm ${
-                  loading ? "opacity-70 cursor-not-allowed" : ""
+                  loading || !locationLoaded
+                    ? "opacity-70 cursor-not-allowed"
+                    : ""
                 }`}
-                disabled={loading}
               >
                 {loading ? "Submitting..." : "Submit & Download"}
               </button>
@@ -127,7 +130,7 @@ const BrochurePopup = () => {
             </p>
             <div className="flex justify-center">
               <a
-                href="/Allaster-Brochure.pdf" // Replace with actual link
+                href="/Allaster-Brochure.pdf"
                 download
                 className="bg-[#DD2B1C] text-white py-2 px-4 rounded font-semibold hover:bg-[#DD2B1C] transition-colors text-sm"
               >
