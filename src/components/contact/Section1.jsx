@@ -210,19 +210,19 @@ const Section1 = () => {
             alt="unit-image"
           />
           <div className="sm:hidden w-[41%] h-fit">
-            <h4 className="text-[1vw] font-semibold">Address</h4>
+            <h4 className="text-[1vw] font-semibold">Unit 1</h4>
             <a target="_blank" className="text-[1.05vw] text-black/70">
-              <span className="font-semibold">Unit 1</span> : Plot No. 12, Shed
+              <span className="font-semibold text-black">Address</span> : Plot No. 12, Shed
               No. 9A, Sidco Industrial Estate, Vichoor, Manali New Town, Chennai
               - 600103, Tamilnadu, INDIA
             </a>
-            <h4 className="mt-[1vw] text-[1vw] font-semibold">
-              E-Mail Address
-            </h4>
-            <p className="text-[1.05vw] text-black/70">
-              <a href="mailto:sales@allastir.com">sales@allastir.com</a>
+             <p className="text-[1.05vw] mt-[0.5vw]">
+              <a href="tel:+91-97910 39207">
+                <span className="text-[1vw] font-semibold">E-Mail :</span>{" "}
+                <span className="text-black/70"> <a href="mailto:sales@allastir.com">sales@allastir.com</a></span>
+              </a>
             </p>
-            <p className="text-[1.05vw] mt-[0.5vw]">
+            <p className="text-[1.05vw]">
               <a href="tel:+91-97910 39207">
                 <span className="text-[1vw] font-semibold">Mobile No. :</span>{" "}
                 <span className="text-black/70">+91-97910 39207</span>
@@ -250,19 +250,19 @@ const Section1 = () => {
             alt="unit-image"
           />
           <div className="sm:hidden w-[41%] h-fit">
-            <h4 className="text-[1vw] font-semibold">Address</h4>
+            <h4 className="text-[1vw] font-semibold">Unit 2</h4>
             <a target="_blank" className="text-[1.05vw] text-black/70">
-              <span className="font-semibold">Unit 2</span> : Plot No. 8-7, 8-8,
+              <span className="font-semibold text-black">Address</span> : Plot No. 8-7, 8-8,
               8-17, 8-18, APIIC Industrial Park, Attivaram Village, Ozili
               Mandal, Tirupati District, Andhra Pradesh -524 421.
             </a>
-            <h4 className="mt-[0.5vw] text-[1vw] font-semibold">
-              E-Mail Address
-            </h4>
-            <p className="text-[1.05vw] text-black/70">
-              <a href="mailto:sales@allastir.com">sales@allastir.com</a>
+           <p className="text-[1.05vw] mt-[0.5vw]">
+              <a href="tel:+91-97910 39207">
+                <span className="text-[1vw] font-semibold">E-Mail :</span>{" "}
+                <span className="text-black/70"> <a href="mailto:sales@allastir.com">sales@allastir.com</a></span>
+              </a>
             </p>
-            <p className="text-[1.05vw] mt-[0.5vw]">
+            <p className="text-[1.05vw]">
               <a href="tel:+91-97910 39207">
                 <span className="text-[1vw] font-semibold">Mobile No. :</span>{" "}
                 <span className="text-black/70">+91-97910 39207</span>

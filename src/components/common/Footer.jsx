@@ -56,11 +56,11 @@ const Footer = () => {
           </div>
           <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[4vw] gap-[1vw]">
             <h2 className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
-              <strong>Address</strong>
+              <strong>Unit 1</strong>
             </h2>
             <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[4vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
               <span>
-                <strong>Unit 1 : </strong>{" "}
+                <strong>Address : </strong>{" "}
                 <a
                   href="https://www.google.com/maps/place/Allastir+Private+Limited/@13.2049661,80.2602679,17z/data=!3m1!4b1!4m6!3m5!1s0x3a527bd3e5162223:0xf46d6c8e7f745a4b!8m2!3d13.2049661!4d80.2628428!16s%2Fg%2F11fv45s00w?entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
                   target="_blank"
@@ -121,11 +121,11 @@ const Footer = () => {
           </div>
           <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[4vw] gap-[1vw]">
             <h2 className="sm:hidden sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
-              <strong>Address</strong>
+              <strong>Unit 2</strong>
             </h2>
             <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[4vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
               <span>
-                <strong>Unit 2 : </strong>{" "}
+                <strong>Address : </strong>{" "}
                 <a
                   target="_blank"
                   href="https://maps.app.goo.gl/j87WGfps9Go8yHrz7"
