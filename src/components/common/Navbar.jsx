@@ -40,7 +40,7 @@ const Navbar = ({ navRef }) => {
   return (
     <div
       ref={navRef}
-      className="w-full sm:px-[4vw] md:px-[4vw] lg:px-[4vw] px-[2.5vw] sm:py-[3.1vw] md:py-[3.1vw] lg:py-[3.1vw] py-[.8vw] text-black bg-white flex items-center justify-between fixed z-10 top-0 left-0"
+      className="w-full sm:px-[4vw] md:px-[4vw] lg:px-[4vw] px-[2.5vw] sm:py-[3.1vw] md:py-[2vw] lg:py-[3.1vw] py-[.8vw] text-black bg-white flex items-center justify-between fixed z-10 top-0 left-0"
       style={{ backdropFilter: "blur(40px)" }}
     >
       <Link href="/">
@@ -48,7 +48,7 @@ const Navbar = ({ navRef }) => {
           width={1000}
           height={1000}
           priority
-          className="w-[200px] h-[60px] object-contain"
+          className="md:w-[150px] md:h-auto w-[200px] h-[60px] object-contain"
           src="/allastir_logo.webp"
           alt="logo"
         />
@@ -90,12 +90,12 @@ const Navbar = ({ navRef }) => {
         </Link>
         <i
           onClick={openSidebar}
-          className="menu-icon cursor-pointer ri-menu-fill text-[5.5vw] lg:text-[3.3vw] sm:block md:block lg:block hidden font-semibold"
+          className="menu-icon cursor-pointer ri-menu-fill text-[5.5vw] md:text-[3vw] lg:text-[3.3vw] sm:block md:block lg:block hidden font-semibold"
         ></i>
       </div>
 
       {/* Side Menu */}
-      <div className="side-menu duration-300 w-[100%] sm:pt-[20vw] bg-white h-[90dvh] absolute top-[100%] opacity-0 pointer-events-none left-0 text-black sm:flex sm:flex-col sm:justify-between md:flex lg:flex hidden justify-end capitalize text-left text-[5.5vw] lg:text-[3.5vw]">
+      <div className="side-menu duration-300 w-[100%] sm:pt-[20vw] bg-white h-[90dvh] absolute top-[100%] opacity-0 pointer-events-none left-0 text-black sm:flex sm:flex-col sm:justify-between md:flex md:flex-col md:justify-between lg:flex hidden justify-end capitalize text-left md:text-[3vw] text-[5.5vw] lg:text-[3.5vw]">
         <div className="w-full h-fit relative flex flex-col gap-[2vw] justify-center items-end bg-white p-[4vw]">
           {menus.map(({ path, name }, index) =>
             name === "Brochure" ? (
@@ -123,7 +123,7 @@ const Navbar = ({ navRef }) => {
             )
           )}
         </div>
-        <div className="w-full flex items-center justify-between text-[4.5vw] p-[4vw]">
+        <div className="w-full flex items-center justify-between text-[4.5vw] md:text-[3vw] p-[4vw]">
           <p>Contact</p>
           <p><a href="mailto:sales@allastir.com">sales@allastir.com</a></p>
         </div>

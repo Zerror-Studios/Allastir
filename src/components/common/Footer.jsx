@@ -23,9 +23,9 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className="sm:w-full  lg:w-full md:w-full xl:w-[85%] w-[55%] xl:flex-wrap sm:h-fit lg:h-fit md:h-fit h-full xl:h-[60%] sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  flex sm:flex-wrap  md:flex-wrap lg:flex-wrap sm:mt-[10vw] md:mt-[10vw]  lg:mt-[10vw] capitalize sm:justify-between md:justify-between lg:justify-between justify-between">
+        <div className="sm:w-full  lg:w-full md:w-full xl:w-[85%] w-[55%] xl:flex-wrap sm:h-fit lg:h-fit md:h-fit h-full xl:h-[60%] sm:text-[4.5vw] md:text-[2.5vw] lg:text-[2.8vw] xl:text-[1.8vw]  flex sm:flex-wrap  md:flex-wrap lg:flex-wrap sm:mt-[10vw] md:mt-[10vw]  lg:mt-[10vw] capitalize sm:justify-between md:justify-between lg:justify-between justify-between">
           <div className="sm:w-[48%] md:w-[48%] lg:w-[48%] w-[15%] sm:h-fit lg:h-fit md:h-fit h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] xl:gap-[1vw]  gap-[1vw]">
-            <h2 className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
+            <h2 className="sm:text-[4.5vw] md:text-[3vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
               <strong>Quick Link</strong>
             </h2>
             <div className="flex flex-col gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
@@ -54,11 +54,11 @@ const Footer = () => {
               )}
             </div>
           </div>
-          <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[4vw] gap-[1vw]">
-            <h2 className="sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
+          <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[2vw] gap-[1vw]">
+            <h2 className="sm:text-[4.5vw] md:text-[3vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
               <strong>Unit 1</strong>
             </h2>
-            <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[4vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
+            <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[2vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
               <span>
                 <strong>Address : </strong>{" "}
                 <a
@@ -102,7 +102,7 @@ const Footer = () => {
               </span>
             </div>
 
-            <div className="sm:hidden w-full flex flex-col sm:mt-[7vw]">
+            <div className="sm:hidden md:hidden w-full flex flex-col sm:mt-[7vw]">
               <p className="sm:block lg:block md:block hidden text-[3.5vw] lg:text-[2vw] opacity-[.8]">
                 All Rights Reserved © Allastir Pvt. Ltd.
               </p>
@@ -119,11 +119,11 @@ const Footer = () => {
               <div></div>
             </div>
           </div>
-          <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[4vw] gap-[1vw]">
+          <div className="sm:w-full md:w-full lg:w-full shrink-0 xl:w-[100%] w-[33.3%] sm:h-fit lg:h-fit md:h-fit sm:mt-[5vh] md:mt-[10vh] lg:mt-[10vh] h-full flex flex-col sm:gap-[4vw] lg:gap-[2vw] md:gap-[2vw] gap-[1vw]">
             <h2 className="sm:hidden sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] xl:text-[1.8vw]  text-[1.1vw]">
               <strong>Unit 2</strong>
             </h2>
-            <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[4vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
+            <div className="flex flex-col xl:flex-row sm:gap-[4vw] md:gap-[2vw] lg:gap-[2vw] gap-[.5vw] sm:h-fit lg:h-fit md:h-fit h-[70%]">
               <span>
                 <strong>Address : </strong>{" "}
                 <a
@@ -189,10 +189,10 @@ const Footer = () => {
       </div>
       <div className="w-ful flex justify-between items-end sm:flex-col-reverse sm:items-start sm:gap-[5vw] sm:mt-[5vw] mt-[5vw]">
         <div>
-          <p className="sm:text-[3.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw] opacity-[.9]">
+          <p className="sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw] opacity-[.9]">
             All Rights Reserved © Allastir Pvt. Ltd.
           </p>
-          <p className="sm:text-[3.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw]">
+          <p className="sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw]">
             <span className="opacity-[.9] text-white">Developed by</span>{" "}
             <a
               target="_blank"
@@ -203,7 +203,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="flex gap-[3vw] sm:gap-[5vw] md:gap-[3vw] lg:gap-[3vw] sm:text-[3.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw]">
+        <div className="flex gap-[3vw] sm:gap-[5vw] md:gap-[3vw] lg:gap-[3vw] sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] text-[.8vw]">
           <Link href="/" className="hover:text-gray-300">
             Privacy Policy
           </Link>
