@@ -846,7 +846,7 @@ const Journey = () => {
               </div>
             </div>
           </div>
-          <div className="sm:w-full md:w-full lg:w-full w-[89%] sm:h-[80%] md:h-[80%] lg:h-[95%] h-full relative rounded-lg overflow-hidden">
+          <div className="sm:w-full md:w-full lg:w-full w-[89%] sm:h-[80%] md:h-[100%] lg:h-[95%] h-full relative rounded-lg overflow-hidden">
             {timelineData.map((data, index) => (
               <div
                 key={index}
@@ -875,23 +875,23 @@ const Journey = () => {
                   }}
                   className="sm:hidden w-full h-full absolute top-0 left-0 flex flex-col justify-end p-[2vw]"
                 >
-                  <div className="sm:h-[8.5vw] md:h-[6vw] lg:h-[6vw] xl:h-[4vw] h-[4vw] w-fit overflow-hidden sm:mb-[3vw] md:mb-[3vw] lg:mb-[3vw] xl:mb-[3vw]">
+                  <div className="sm:h-[8.5vw] md:h-[4vw] lg:h-[6vw] xl:h-[4vw] h-[4vw] w-fit overflow-hidden sm:mb-[3vw] md:mb-[3vw] lg:mb-[3vw] xl:mb-[3vw]">
                     {timelineData.map((data, i) => (
                       <h2
                         key={i}
-                        className="timeline-title text-white leading-1 whitespace-nowrap sm:text-[5vw] md:text-[4vw] lg:text-[4vw]  xl:text-[2.5vw]  text-[2.3vw] capitalize"
+                        className="timeline-title text-white leading-1 whitespace-nowrap sm:text-[5vw] md:text-[3vw] lg:text-[4vw]  xl:text-[2.5vw]  text-[2.3vw] capitalize"
                       >
                         {data.title}
                       </h2>
                     ))}
                   </div>
-                  <div className="relative h-[15%] w-[70%]">
+                  <div className="relative md:h-[30%] h-[15%] w-[70%]">
                     {timelineData.map((data, i) => (
                       <p
                         key={i}
                         className={` timeline-para${i + 1} ${
                           i === 0 ? "" : "opacity-0"
-                        } text-white absolute w-[90%] lg:w-[70%] sm:text-[4.5vw]  md:text-[3.7vw] lg:text-[2.5vw] xl:text-[1.8vw]  text-[1vw] leading-1`}
+                        } text-white absolute w-[90%] lg:w-[70%] sm:text-[4.5vw]  md:text-[2vw] lg:text-[2.5vw] xl:text-[1.8vw]  text-[1vw] leading-1`}
                       >
                         {data.description}
                       </p>

@@ -26,14 +26,14 @@ const markers = [
 
 const WorldMap = () => {
     return (
-        <div className="w-full min-h-[80vh] flex sm:flex-col sm:p-[4vw]  items-center justify-between p-10 py-[6vw] pb-[0]">
+        <div className="w-full min-h-[80vh] flex sm:flex-col md:flex-col sm:p-[4vw] md:p-[4vw]  items-center justify-between p-10 py-[6vw] pb-[0]">
             {/* Left Side */}
-            <div className="lg:w-1/2 w-full max-w-xl mb-10 lg:mb-0">
-                <h2 className="sm:text-[7vw] md:text-[7vw] mb-[2vw] text-[3vw] leading-tight sm:mb-[6vw]">
+            <div className="lg:w-1/2 md:w-full w-full md:max-w-full max-w-xl mb-10 lg:mb-0">
+                <h2 className="sm:text-[7vw] md:text-[5vw] mb-[2vw] text-[3vw] leading-tight sm:mb-[6vw]">
                 Global Presence <br />
                 Through Innovation
                 </h2>
-                <p className="sm:text-[4.5vw] md:text-[3.7vw] sm:w-full w-[80%] lg:text-[2vw] xl:text-[1.8vw] text-[1vw] sm:mt-[2.5vw] md:mt-[2.5vw]">
+                <p className="sm:text-[4.5vw] md:text-[2.5vw] sm:w-full w-[80%] lg:text-[2vw] xl:text-[1.8vw] text-[1vw] sm:mt-[2.5vw] md:mt-[2.5vw]">
                 At Allastir, our reach extends far beyond boundaries. With a presence in key regions across Asia, Europe, North America, and South America, we work alongside forward-thinking partners and clients around the globe.
                     <br />
                     <br />
@@ -42,7 +42,7 @@ const WorldMap = () => {
             </div>
 
             {/* Right Side (Map) */}
-            <div className="lg:w-1/2 w-full bg-white select-none">
+            <div className="lg:w-1/2 md:w-full w-full bg-white select-none">
                 <ComposableMap
                     projectionConfig={{ scale: 200 }}
                     width={980}

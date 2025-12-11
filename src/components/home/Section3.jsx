@@ -64,7 +64,7 @@ const Section3 = () => {
                                 alt={bar.title}
                             />
                             <div>
-                                <h4 className="sm:text-[5vw] md:text-[4vw] lg:text-[3vw] xl:text-[2.5vw] text-[1.1vw] font-semibold">{bar.title}</h4>
+                                <h4 className="sm:text-[5vw] md:text-[3vw] lg:text-[3vw] xl:text-[2.5vw] text-[1.1vw] font-semibold">{bar.title}</h4>
                                 <p className="sm:text-[4.5vw] text-[#7F7F7F]">{bar.description}</p>
                             </div>
                         </div>

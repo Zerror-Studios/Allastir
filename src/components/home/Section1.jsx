@@ -95,25 +95,25 @@ const Section1 = () => {
             Pharmaceutical Manufacturer.
           </h1>
         </div>
-        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[12vw] lg:h-[9vw] h-[5vw]">
+        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[8.5vw] lg:h-[9vw] h-[5vw]">
           <h1
-            className="hero-txt1 sm:text-[11vw] md:text-[9vw] lg:text-[7vw] text-[4vw] leading-none"
+            className="hero-txt1 sm:text-[11vw] md:text-[7vw] lg:text-[7vw] text-[4vw] leading-none"
             style={{ transform: "translateY(130%)" }}
           >
             Innovation driven
           </h1>
         </div>
-        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[12vw] lg:h-[9vw] h-[5vw]">
+        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[8.5vw] lg:h-[9vw] h-[5vw]">
           <h1
-            className="hero-txt2 sm:text-[11vw] md:text-[9vw] lg:text-[7vw] text-[4vw] leading-none"
+            className="hero-txt2 sm:text-[11vw] md:text-[7vw] lg:text-[7vw] text-[4vw] leading-none"
             style={{ transform: "translateY(130%)" }}
           >
             Pharmaceutical
           </h1>
         </div>
-        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[12vw] lg:h-[9vw] h-[5vw]">
+        <div className="sm:block md:block lg:block hidden overflow-hidden sm:h-[14vw] md:h-[8.5vw] lg:h-[9vw] h-[5vw]">
           <h1
-            className="hero-txt2 sm:text-[11vw] md:text-[9vw] lg:text-[7vw] text-[4vw] leading-none"
+            className="hero-txt2 sm:text-[11vw] md:text-[7vw] lg:text-[7vw] text-[4vw] leading-none"
             style={{ transform: "translateY(130%)" }}
           >
             Manufacturer.
@@ -128,7 +128,7 @@ const Section1 = () => {
             href="/contact"
             className="flex items-center justify-center sm:h-[8vw] h-[4vw]"
           >
-            <div className="text-white sm:text-[4.5vw] md:text-[3.7vw] lg:text-[2.8vw] bg-[#DD2B1C] w-fit capitalize sm:px-[4.5vw] md:px-[3.7vw] lg:px-[3.7vw] xl:px-[3.7vw]  px-[1.5vw] hover:px-[2vw] hover:sm:px-[5vw] hover:md:px-[4vw] transition-all duration-500 cursor-pointer sm:py-[2vw] md:py-[1vw] xl:py-[1vw] py-[.6vw] hover:sm:py-[2.5vw] hover:md:py-[1.5vw] hover:py-[1vw] rounded-full">
+            <div className="text-white sm:text-[4.5vw] md:text-[3vw] lg:text-[2.8vw] bg-[#DD2B1C] w-fit capitalize sm:px-[4.5vw] md:px-[3.7vw] lg:px-[3.7vw] xl:px-[3.7vw]  px-[1.5vw] hover:px-[2vw] hover:sm:px-[5vw] hover:md:px-[4vw] transition-all duration-500 cursor-pointer sm:py-[2vw] md:py-[1vw] xl:py-[1vw] py-[.6vw] hover:sm:py-[2.5vw] hover:md:py-[1.5vw] hover:py-[1vw] rounded-full">
               <h4>Contact Us</h4>
             </div>
           </Link>

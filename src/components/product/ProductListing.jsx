@@ -39,10 +39,10 @@ const ProductListing = ({ allCategories }) => {
     : [];
 
   return (
-    <div className="relative w-full min-h-fit p-[11%] py-[6vw] sm:p-[20px] sm:py-[10vw]">
+    <div className="relative w-full min-h-fit p-[11%] py-[6vw] sm:p-[20px] md:p-[4vw] sm:py-[10vw]">
       {/* 🌟 PAGE HEADING */}
-      <h2 className="text-[3vw] leading-tight sm:mb-[8vw] mb-[3vw] sm:text-[6vw] md:text-[7vw]">
-        Advanced facilities built for quality. <br className="sm:hidden" />
+      <h2 className="text-[3vw] leading-tight sm:mb-[8vw] md:mt-[2vw] md:mb-[4vw] mb-[3vw] sm:text-[6vw] md:text-[5vw]">
+        Advanced facilities built for quality. <br className="sm:hidden md:hidden" />
         Experts in niche and high-value APIs.
       </h2>
 
